@@ -1,11 +1,11 @@
 import trackEvent from './api/trackEvent'
 import updateUserProfile from './api/updateUserProfile'
 
-export default mixpanel = ({
+const mixpanel = ({
   token,
   selectDistinctId = () => null,
   selectUserProfileData = () => null,
-  selectEventName = (action) => action.type, 
+  selectEventName = (action) => action.type,
   selectProperties = () => null,
   ignoreAction = (action) => false,
 }) => store => next => action => {
@@ -41,3 +41,5 @@ export default mixpanel = ({
 
   return next(action)
 }
+
+export default mixpanel
